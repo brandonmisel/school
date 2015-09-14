@@ -66,6 +66,7 @@ public class Person {
         {
             return(weight);
         } 
+     
      public static void printNames()
      {
          System.out.println("===printNames");
@@ -75,7 +76,7 @@ public class Person {
              System.out.println(temp.getName());
          }
      }
-     public static void printNamesOfGender(Gender _gender)
+     public static void printNames(Gender _gender)
      {
          System.out.println("===printNamesOfGender===:"  +  _gender);
          for(Person temp : people)
@@ -85,10 +86,11 @@ public class Person {
          }
      }
      
-    }
+    
 //    public String toString()
 //    {
 //        return(name + " " + gender + " " + weight)
 //    }
 
+}
 

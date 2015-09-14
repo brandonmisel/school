@@ -16,18 +16,18 @@ public class School {
     public static void main(String[] args) {
 
         
-        Person joe = Person.addPerson("Joe", Person.Gender.Male);
-        Person jill = Person.addPerson("Jill", Person.Gender.Female);
-        Person billyJoe = Person.addPerson("BillyJoe", Person.Gender.Male);
-        Person alex = Person.addPerson("Alex", Person.Gender.Male);
-        Person brenden = Person.addPerson("Brenden", Person.Gender.Male);
-        Person lauren = Person.addPerson("Lauren", Person.Gender.Female);
-        Person julie = Person.addPerson("Julie", Person.Gender.Female);
-        Person james = Person.addPerson("James", Person.Gender.Male);
-        Person noah = Person.addPerson("Noah", Person.Gender.Male);
+        Person joe = Person.addPerson("Joe", Person.Gender.Male,180);
+        Person jill = Person.addPerson("Jill", Person.Gender.Female,130);
+        Person billyJoe = Person.addPerson("BillyJoe", Person.Gender.Male,162);
+        Person alex = Person.addPerson("Alex", Person.Gender.Male,143);
+        Person brenden = Person.addPerson("Brenden", Person.Gender.Male,175);
+        Person lauren = Person.addPerson("Lauren", Person.Gender.Female,123);
+        Person julie = Person.addPerson("Julie", Person.Gender.Female,119);
+        Person james = Person.addPerson("James", Person.Gender.Male,137);
+        Person noah = Person.addPerson("Noah", Person.Gender.Male,194);
         
         Person.printNames();
-        Person.printNamesOfGender(Person.Gender.Male);
+        Person.printNames(Person.Gender.Male);
         
         System.out.println(billyJoe);
     }
