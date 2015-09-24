@@ -9,6 +9,7 @@ package school;
  * @author 372008086
  */
 import java.util.ArrayList;
+import java.util.Calendar;
 public class Person {
     enum Gender{
         Male,Female
@@ -16,12 +17,16 @@ public class Person {
     
     
 //    public static int numPeople = 10;
-    private static int currentPeopleIndex = 0;
+//    private static int currentPeopleIndex = 0;
 //    private static Person people[] = new Person[numPeople];
-    private static ArrayList<Person> people = new ArrayList<Person>();
+    protected static ArrayList<Person> people = new ArrayList<Person>();
     private String name;
     private Gender gender;
     private int weight;
+    private int birthMonth;
+    private int birthYear;
+    
+    
     
     public static Person addPerson(String _name,Gender _gender, int _weight)
     {
@@ -29,8 +34,10 @@ public class Person {
         people.add(temp);
         return(temp);
     }
-    
-    
+    public static void addPerson(Person _person)
+    {
+       people.add(_person);
+    }
     Person()
     {
         name = "None";
@@ -42,6 +49,19 @@ public class Person {
         gender = _gender;
         weight = _weight;
     }
+    public void setBirthDate(int _day,int _month,int _year)
+    {
+        birthMonth = _month;
+        birthYear = _year;
+    }
+    public int getAge()
+    {
+        Calendar now = Calendar.getInstance();
+        int day = now.get(Calendar.DAY_OF_MONTH);
+        int month = now.get(Calendar.MONTH) + 1;
+        int year = now.get(Calendar.YEAR);
+        return(0);
+    } 
     public void setName(String _name)
         {
             name = _name;
@@ -85,12 +105,20 @@ public class Person {
              System.out.println(temp.getName());
          }
      }
-     
-    
-//    public String toString()
-//    {
-//        return(name + " " + gender + " " + weight)
-//    }
+     public static void printAge(int _birthMonth, int _birthYear)
+     {
+         System.out.println("===printAge===:"  + _birthMonth + _birthYear);
+         for(Person temp : people)
+         {
+             if(temp.getAge() == _birthMonth)
+             System.out.println(temp.getAge());
+         }
+     }
+      
+     public String toString()
+     {
+        return(name + " " + gender + " " + weight);
+     }
 
 }
 

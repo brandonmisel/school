@@ -16,19 +16,34 @@ public class School {
     public static void main(String[] args) {
 
         
-        Person joe = Person.addPerson("Joe", Person.Gender.Male,180);
-        Person jill = Person.addPerson("Jill", Person.Gender.Female,130);
-        Person billyJoe = Person.addPerson("BillyJoe", Person.Gender.Male,162);
-        Person alex = Person.addPerson("Alex", Person.Gender.Male,143);
-        Person brenden = Person.addPerson("Brenden", Person.Gender.Male,175);
-        Person lauren = Person.addPerson("Lauren", Person.Gender.Female,123);
-        Person julie = Person.addPerson("Julie", Person.Gender.Female,119);
-        Person james = Person.addPerson("James", Person.Gender.Male,137);
-        Person noah = Person.addPerson("Noah", Person.Gender.Male,194);
+        Student joe = Student.addStudent("Joe", Person.Gender.Male,180,11);
+        Student jill = Student.addStudent("Jill", Person.Gender.Female,130,9);
+        Student billyJoe = Student.addStudent("BillyJoe", Person.Gender.Male,162,12);
+        Student alex = Student.addStudent("Alex", Person.Gender.Male,143,9);
+        Student brenden = Student.addStudent("Brenden", Person.Gender.Male,175,11);
+        Student lauren = Student.addStudent("Lauren", Person.Gender.Female,123,11);
+        Student julie = Student.addStudent("Julie", Person.Gender.Female,119,10);
+        Student james = Student.addStudent("James", Person.Gender.Male,137,10);
+        Student noah = Student.addStudent("Noah", Person.Gender.Male,194,9);
         
-        Person.printNames();
-        Person.printNames(Person.Gender.Male);
+        Student.printNames();
+        Student.printNames(Person.Gender.Male);
         
-        System.out.println(billyJoe);
+        Course geom = Course.addCourse("Geometery", Course.Type.Math,4);
+        Course aplit = Course.addCourse("AP Literature", Course.Type.English,1);
+        Course apush = Course.addCourse("AP US History", Course.Type.History,2);
+        Course avid = Course.addCourse("Avid", Course.Type.Elective,1);
+        Course alg2 = Course.addCourse("Algebra 2", Course.Type.Math,3);
+        Course chem = Course.addCourse("Chemistry", Course.Type.Science,4);
+        
+        Course.printNamesOfClasses();
+        
+        
+        Student bill = Student.addStudent("Bill", Person.Gender.Male,168,11);
+        
+        Student bobby = new Student("Bobby", Person.Gender.Male,178,11);
+        geom.addStudent(bobby);
+        
+        System.out.println(bobby.getName());
     }
 }

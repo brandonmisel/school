@@ -13,6 +13,7 @@ public class Course {
     private Type type;
     private int period;
     
+    private Student theStudent;
     
     public static Course addCourse(String _name, Type _type, int _period)
     {
@@ -32,6 +33,14 @@ public class Course {
         name = _name;
         type = _type;
         period = _period;
+    }
+    public void addStudent(Student _student)
+    {
+        if(theStudent == null)
+        {
+           theStudent = _student;
+           _student.addCourse(this);
+        }
     }
     public void setName(String _name)
         {
@@ -58,16 +67,16 @@ public class Course {
             return(period);
         } 
      
-     public static void printNames()
+     public static void printNamesOfClasses()
      {
-         System.out.println("===printNames");
+         System.out.println("===printNamesOfClasses");
          
          for(Course temp : courses)
          {
              System.out.println(temp.getName());
          }
      }
-     public static void printNames(Type _type)
+     public static void printNamesOfClasses(Type _type)
      {
          System.out.println("===printNamesOfGender===:"  +  _type);
          for(Course temp : courses)
