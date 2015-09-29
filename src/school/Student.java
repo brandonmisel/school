@@ -70,7 +70,8 @@ public class Student extends Person{
             if (temp != null)
             {
                 if(temp.getTeacher() != null)
-                System.out.println(temp.getTeacher().getName());}
+                System.out.println(temp.getTeacher().getName());
+            }
         }
     }
 }
