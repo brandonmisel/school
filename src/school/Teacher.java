@@ -7,7 +7,7 @@ public class Teacher extends Person{
 
     private double meanLevel;
     private Course theCourse;
-    private Course courses[] = new Course[4];
+    private Course courses[] = new Course[Course.numPeriods];
     
     public static Teacher addTeacher(String _name,
     Gender _gender, int _weight,double _meanLevel)
@@ -64,7 +64,33 @@ public class Teacher extends Person{
                 System.out.println(temp.getName());
         }
              
-    }   
+    }
+    public static Teacher mostElectivesCourses ()
+    {
+        Teacher mostElectives = null;
+        int currNumberOfElectives = 0;
+        for (Person temp : people)
+        {
+            if (temp instanceof Teacher)
+            {
+                int numElective = 0;
+                Teacher teacher = (Teacher)temp;
+                for(Course course : teacher.courses)
+                {
+                    if(course != null && course.getType() == Course.Type.Elective)
+                    {
+                        numElective++;
+                    }
+                }
+                if(numElective > currNumberOfElectives)
+                {
+                    numElective = currNumberOfElectives;
+                    mostElectives = teacher;
+                }
+             }
+        }
+        return(mostElectives);
+    }
     public void printStudentsNames()
     {
         System.out.println(getName() + " teaches");
@@ -75,6 +101,22 @@ public class Teacher extends Person{
                 for (int index = 0;index < temp.getNumStudents();index++)
                 {
                     System.out.println(temp.getStudent(index).getName());
+                }
+            }
+        }
+    }
+    public void printStudentsNamesInGrade11()
+    {
+        int grade = 11;
+        System.out.println(getName() + " teaches");
+        for (Person temp : people)
+        {
+        Teacher teacher = (Teacher)temp;    
+        if (temp instanceof Teacher)
+            {
+                for(Course course : teacher.courses)
+                {
+                    
                 }
             }
         }
